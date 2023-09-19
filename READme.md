@@ -412,3 +412,26 @@ System.out.println(getNumbers.get()); // Output: [1, 2, 3, 4, 5]
 
 3. **Phiên Bản Nguyên Thuỷ**:
    - Do đó, Java cung cấp các phiên bản nguyên thuỷ cho các giao diện chức năng này. Ví dụ, `IntPredicate`, `LongPredicate`, và `DoublePredicate` là các phiên bản nguyên thuỷ của giao diện `Predicate`. Tương tự, `IntConsumer`, `LongConsumer`, và `DoubleConsumer` là các phiên bản nguyên thuỷ của giao diện `Consumer`.
+
+```java
+import java.util.function.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // IntPredicate
+        IntPredicate isEven = (num) -> num % 2 == 0;
+        System.out.println(isEven.test(4)); // Output: true
+        System.out.println(isEven.test(7)); // Output: false
+
+        // LongPredicate
+        LongPredicate isPositive = (num) -> num > 0;
+        System.out.println(isPositive.test(10L)); // Output: true
+        System.out.println(isPositive.test(-5L)); // Output: false
+
+        // DoublePredicate
+        DoublePredicate isGreaterThanZero = (num) -> num > 0.0;
+        System.out.println(isGreaterThanZero.test(3.5)); // Output: true
+        System.out.println(isGreaterThanZero.test(-2.0)); // Output: false
+    }
+}
+```
