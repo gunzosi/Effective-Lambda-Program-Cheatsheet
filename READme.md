@@ -485,6 +485,8 @@ Age : 30
 
 `BiPredicate` - `BiConsumer` - `BiFunction`
 
+> Example: [BiFunction](utilFunction/BiExFunction.java)
+
 ```java
 BiPredicate<T, U>
 
