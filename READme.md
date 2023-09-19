@@ -286,7 +286,7 @@ Tuy nhiên trong đó có **4** loại đặc trưng , thường được sử d
 - `Function<T,R>`
 - `Supplier<T>`
 
-> Example: java.util.[**`function`**]()
+> Example: java.util.[**`function`**](utilFunction/Main.java)
 
 ### 3.1 `Predicate<T>`
 
@@ -401,3 +401,14 @@ System.out.println("Current date: " + getCurrentDate.get()); // Output: Current 
 Supplier<List<Integer>> getNumbers = () -> Arrays.asList(1, 2, 3, 4, 5);
 System.out.println(getNumbers.get()); // Output: [1, 2, 3, 4, 5]
 ```
+
+1. **Functional Interfaces và Loại Dữ Liệu Áp Dụng**:
+
+   - Các giao diện chức năng (`Predicate<T>`, `Consumer<T>`, `Function<T, R>`, và `Supplier<T>`) được thiết kế để thực hiện các hoạt động khác nhau trên đối tượng của loại tham chiếu (`Reference Type Objects`).
+
+2. **Dữ Liệu Nguyên Thuỷ không được áp Dụng**:
+
+   - Các giá trị nguyên thuỷ như `int, long, float`, hoặc `double` không thể được sử dụng trực tiếp với các giao diện chức năng này.
+
+3. **Phiên Bản Nguyên Thuỷ**:
+   - Do đó, Java cung cấp các phiên bản nguyên thuỷ cho các giao diện chức năng này. Ví dụ, `IntPredicate`, `LongPredicate`, và `DoublePredicate` là các phiên bản nguyên thuỷ của giao diện `Predicate`. Tương tự, `IntConsumer`, `LongConsumer`, và `DoubleConsumer` là các phiên bản nguyên thuỷ của giao diện `Consumer`.
