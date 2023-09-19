@@ -290,8 +290,94 @@ Tuy nhiên trong đó có **4** loại đặc trưng , thường được sử d
 
 `Predicate<T>` trong _Package :_ java.util.**`function`** đại diện cho một hoạt động kiểm tra điều kiện và trả về một giá trị boolean như kết quả. Nó thường được sử dụng để kiểm tra các điều kiện trong các hoạt động như lọc dữ liệu theo kiểu `<T>`.
 
+Abstract Method được áp dụng nhiều là
+
+```java
+// Abstract Method
+boolean test(T t)
+```
+
+Phương thức này được sử dụng để đánh giá điều kiện (predicate) trên một đối tượng đầu vào (t). Nó kiểm tra xem đối tượng đầu vào có thỏa mãn điều kiện được định nghĩa trong Predicate hay không.
+
+```java
+Predicate<Integer> isPositive = (num) -> num > 0;
+System.out.println(isPositive.test(5)); // Output: true
+System.out.println(isPositive.test(-5)); // Output: false
+```
+
+```java
+List<String> names = Arrays.asList("John", "Jane", "Steve", "Mary");
+names.stream().filter(name -> name.startsWith("J")).forEach(System.out::println);
+// Output: John, Jane
+```
+
 ### 3.2 `Consumer<T>`
+
+`Consumer<T>` Giao diện Consumer đại diện cho một hoạt động nhận đối số nhưng không trả về gì cả. Nó thường được sử dụng để tiêu thụ (consume) dữ liệu hoặc thực hiện một hành động với đối tượng đó.
+
+```java
+// Abstract Method
+boolean test(T t)
+```
+
+_Example:_
+
+```java
+Consumer<List<String>> printList = (list) -> list.forEach(System.out::println);
+List<String> colors = Arrays.asList("Red", "Green", "Blue");
+printList.accept(colors);
+// Output: Red, Green, Blue
+```
+
+```java
+
+```
+
+```java
+
+```
 
 ### 3.3 `Function<T,R>`
 
+`Function<T,R>` Giao diện Function đại diện cho một hoạt động nhận đối số và trả về một kết quả cho người gọi. Nó thường được sử dụng để thực hiện các phép biến đổi hoặc tính toán trên dữ liệu.
+
+```java
+// Abstract Method
+R apply(T t)
+```
+
+```java
+Function<String, Integer> strLength = (str) -> str.length();
+int length = strLength.apply("OpenAI");
+System.out.println("Length: " + length); // Output: Length: 6
+```
+
+```java
+Function<Integer, Boolean> isEven = (num) -> num % 2 == 0;
+System.out.println(isEven.apply(3)); // Output: false
+System.out.println(isEven.apply(4)); // Output: true
+```
+
 ### 3.4 `Supplier<T>`
+
+`Supplier<T>` Giao diện Supplier đại diện cho một hoạt động không nhận bất kỳ đối số nào, nhưng trả về một giá trị cho người gọi. Nó thường được sử dụng để cung cấp (supply) dữ liệu hoặc kết quả cho các phần khác của chương trình.
+
+```java
+// Abstract Method
+T get()
+```
+
+```java
+Supplier<String> getGreeting = () -> "Hello, World!";
+System.out.println(getGreeting.get()); // Output: Hello, World!
+```
+
+```java
+Supplier<LocalDate> getCurrentDate = LocalDate::now;
+System.out.println("Current date: " + getCurrentDate.get()); // Output: Current date: [current date]
+```
+
+```java
+Supplier<List<Integer>> getNumbers = () -> Arrays.asList(1, 2, 3, 4, 5);
+System.out.println(getNumbers.get()); // Output: [1, 2, 3, 4, 5]
+```
