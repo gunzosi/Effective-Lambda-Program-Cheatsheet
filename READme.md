@@ -402,6 +402,8 @@ Supplier<List<Integer>> getNumbers = () -> Arrays.asList(1, 2, 3, 4, 5);
 System.out.println(getNumbers.get()); // Output: [1, 2, 3, 4, 5]
 ```
 
+### 3.5 Đặc điểm và các Class hỗ trợ Primitive
+
 1. **Functional Interfaces và Loại Dữ Liệu Áp Dụng**:
 
    - Các giao diện chức năng (`Predicate<T>`, `Consumer<T>`, `Function<T, R>`, và `Supplier<T>`) được thiết kế để thực hiện các hoạt động khác nhau trên đối tượng của loại tham chiếu (`Reference Type Objects`).
@@ -437,3 +439,7 @@ public class Main {
     }
 }
 ```
+
+### 3.6 Binary Version
+
+- Được thiết kế để làm việc trực tiếp với các giá trị nguyên thuỷ (int, long, double) mà không cần phải boxing và unboxing thành các đối tượng tham chiếu. Điều này giúp tăng hiệu suất trong các tình huống cần thiết.
