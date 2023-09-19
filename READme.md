@@ -442,4 +442,53 @@ public class Main {
 
 ### 3.6 Binary Version
 
-- Được thiết kế để làm việc trực tiếp với các giá trị nguyên thuỷ (int, long, double) mà không cần phải boxing và unboxing thành các đối tượng tham chiếu. Điều này giúp tăng hiệu suất trong các tình huống cần thiết.
+- `BiPredicate`, `BiConsumer`, và `BiFunction` là các biến thể của giao diện Predicate, Consumer, và Function tương ứng. Điểm khác biệt chính nằm ở số lượng đối số mà chúng có thể chấp nhận.
+
+```java
+BiPredicate<Integer, String> isLengthEqual = (num, str) -> str.length() == num;
+System.out.println(isLengthEqual.test(5, "Hello")); // Output: true
+System.out.println(isLengthEqual.test(5, "World")); // Output: false
+```
+
+> Example: [`BiPredicate`, `BiConsumer`, `BiFunction`](utilFunction/biPre.java)
+
+```java
+import java.util.function.BiPredicate;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+
+public class biPre {
+    public static void main(String[] args) {
+        // BiPredicate example
+        BiPredicate<Integer, String> isLengthEqual = (num, str) -> str.length() == num;
+        System.out.println(isLengthEqual.test(5, "Hello")); // Output: true
+        System.out.println(isLengthEqual.test(5, "World")); // Output: false
+
+        // BiConsumer example
+        BiConsumer<String, Integer> printKeyValue = (key, value) -> System.out.println(key + " : " + value);
+        printKeyValue.accept("Age", 30); // Output: Age : 30
+
+        // BiFunction example
+        BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+        System.out.println(add.apply(5, 3)); // Output: 8
+    }
+}
+```
+
+```java
+// Output:
+true
+true
+Age : 30
+8
+```
+
+`BiPredicate` - `BiConsumer` - `BiFunction`
+
+```java
+BiPredicate<T, U>
+
+BiConsumer<T, U>
+
+BiFunction<T, U, R>
+```
