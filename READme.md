@@ -286,6 +286,8 @@ Tuy nhiên trong đó có **4** loại đặc trưng , thường được sử d
 - `Function<T,R>`
 - `Supplier<T>`
 
+> Example: java.util.[**`function`**]()
+
 ### 3.1 `Predicate<T>`
 
 `Predicate<T>` trong _Package :_ java.util.**`function`** đại diện cho một hoạt động kiểm tra điều kiện và trả về một giá trị boolean như kết quả. Nó thường được sử dụng để kiểm tra các điều kiện trong các hoạt động như lọc dữ liệu theo kiểu `<T>`.
@@ -317,7 +319,7 @@ names.stream().filter(name -> name.startsWith("J")).forEach(System.out::println)
 
 ```java
 // Abstract Method
-boolean test(T t)
+void accept(T t);
 ```
 
 _Example:_
@@ -330,11 +332,29 @@ printList.accept(colors);
 ```
 
 ```java
-
+List<String> names = Arrays.asList("John", "Jane", "Steve", "Mary");
+names.forEach(name -> {
+    Consumer<String> printGreeting = (str) -> System.out.println("Hello, " + str);
+    printGreeting.accept(name);
+});
+// Output:
+// Hello, John
+// Hello, Jane
+// Hello, Steve
+// Hello, Mary
 ```
 
 ```java
-
+// Consumer with a Stream:
+List<String> colors = Arrays.asList("Red", "Green", "Blue");
+colors.stream().forEach(color -> {
+    Consumer<String> printColor = (str) -> System.out.println("Color: " + str);
+    printColor.accept(color);
+});
+// Output:
+// Color: Red
+// Color: Green
+// Color: Blue
 ```
 
 ### 3.3 `Function<T,R>`
