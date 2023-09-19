@@ -413,6 +413,8 @@ System.out.println(getNumbers.get()); // Output: [1, 2, 3, 4, 5]
 3. **Phiên Bản Nguyên Thuỷ**:
    - Do đó, Java cung cấp các phiên bản nguyên thuỷ cho các giao diện chức năng này. Ví dụ, `IntPredicate`, `LongPredicate`, và `DoublePredicate` là các phiên bản nguyên thuỷ của giao diện `Predicate`. Tương tự, `IntConsumer`, `LongConsumer`, và `DoubleConsumer` là các phiên bản nguyên thuỷ của giao diện `Consumer`.
 
+- Example: [`java.util.function.(*)`](utilFunction/intPre.java)
+
 ```java
 import java.util.function.*;
 
