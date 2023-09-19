@@ -65,7 +65,7 @@ public class LambdaExample {
 4. Lambda không có cặp ngoặc và kiểu dữ liệu tự suy luận
 
 ```java
-parameter -> { // code };
+parameter -> { }; // code ;
 ```
 
 5. Lambda trong một biểu thức
@@ -270,3 +270,28 @@ Result: 30
 ```
 
 -- _More..._: `Class` [GENERIC LAMBDA](GenericLambda/VariableSyntax.java) && `Interface` [Calculator](GenericLambda/Calculator.java)
+
+# 3. BUILT-IN FUNCTIONAL INTERFACES - Các giao diện được xây dựng sẵn
+
+1. _Package :_ java.util.**`function`** là một package nằm trong thư viện chuẩn của gói Java.
+
+2. java.util.**`function`** cung cấp các kiểu đích cho các biểu thức **lambda** và tham chiếu phương thức (Method Reference).
+
+3. java.util.**`function`** có hơn 43 loại `Functional Inteface`.
+
+Tuy nhiên trong đó có **4** loại đặc trưng , thường được sử dụng nhiều nhất cho Lambda Expression.
+
+- `Predicate<T>`
+- `Consumer<T>`
+- `Function<T,R>`
+- `Supplier<T>`
+
+### 3.1 `Predicate<T>`
+
+`Predicate<T>` trong _Package :_ java.util.**`function`** đại diện cho một hoạt động kiểm tra điều kiện và trả về một giá trị boolean như kết quả. Nó thường được sử dụng để kiểm tra các điều kiện trong các hoạt động như lọc dữ liệu theo kiểu `<T>`.
+
+### 3.2 `Consumer<T>`
+
+### 3.3 `Function<T,R>`
+
+### 3.4 `Supplier<T>`
