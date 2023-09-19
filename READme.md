@@ -1,3 +1,5 @@
+# Effective-Lambda-Program-Cheatsheet
+
 # 1. LAMBDA là gì?
 
 **Lambda** là một tính năng trong ngôn ngữ lập trình Java cho phép định nghĩa và sử dụng các hàm ẩn danh một cách tiện lợi. **Lambda** giúp viết mã ngắn gọn hơn và tập trung vào logic xử lý chính mà không cần phải tạo ra các phần code phức tạp.
