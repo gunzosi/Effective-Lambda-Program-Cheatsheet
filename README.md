@@ -1,1 +1,0 @@
-# Effective-Lambda-Program-Cheatsheet
