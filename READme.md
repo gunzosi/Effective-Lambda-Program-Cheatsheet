@@ -488,9 +488,40 @@ Age : 30
 > Example: [BiFunction](utilFunction/BiExFunction.java)
 
 ```java
+// BiPredicate
 BiPredicate<T, U>
 
+// BiConsumer
 BiConsumer<T, U>
 
+// BiFunction
 BiFunction<T, U, R>
+```
+
+### 3.7 UnaryOperator<T>
+
+[`UnaryOperator<T>:`](utilFunction/UnaryOperatorExample.java)
+
+- Đây là một functional interface định nghĩa trong java.util.function package.
+- Nó là một phiên bản đặc biệt của `Function<T, T>` trong đó cả kiểu dữ liệu đầu vào và đầu ra đều là cùng một kiểu T.
+- `UnaryOperator` thích hợp khi bạn muốn thực hiện một phép toán trên một đối tượng và kết quả là cùng kiểu dữ liệu.
+
+```java
+import java.util.function.UnaryOperator;
+
+public class UnaryOperatorExample {
+    public static void main(String[] args) {
+        // Định nghĩa một UnaryOperator để nhân một số nguyên cho 2
+        UnaryOperator<Integer> multiplyByTwo = x -> x * 2;
+
+        // Áp dụng phép toán lên một số
+        int result = multiplyByTwo.apply(5);
+
+        System.out.println("Result: " + result); // Output: Result: 10
+    }
+}
+```
+
+```java
+// Result: 10
 ```
